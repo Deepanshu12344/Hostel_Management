@@ -1,0 +1,147 @@
+<!-- hostelite_detail.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>Hostelite Information</title>
+</head>
+<body>
+    <div class="container">
+    <h2>HOSTELITE INFORMATION</h2>
+    <p>Name: {{ hostelite.name }}</p>
+    <p>Email: {{ hostelite.email }}</p>
+    <p>Contact No: {{ hostelite.contact_no }}</p>
+    <p>Gender: {{ hostelite.gender }}</p>
+    <p>Room No: {{ hostelite.room_no }}</p>
+    <p>Room Type: {{ hostelite.room_type }}</p>
+    <p>Amount: {{ hostelite.amount }}</p>
+    <p>Date of Joining: {{ hostelite.date_of_joining }}</p>
+    <p>Course Detail: {{ hostelite.course_detail }}</p>
+    <p>Father's Name: {{ hostelite.father_name }}</p>
+    <p>Mother's Name: {{ hostelite.mother_name }}</p>
+    <p>Father's Contact No: {{ hostelite.father_contact_no }}</p>
+    <p>Mother's Contact No: {{ hostelite.mother_contact_no }}</p>
+    <p>Address: {{ hostelite.address }}</p>
+    <!-- Add other fields as needed -->
+
+    <a href="{% url 'edit_hostelite' hostelite.hid %}"><button>Edit Details</button></a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!-- user_detail.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>User Information</title>
+</head>
+<body>
+    <div class="container">
+    <h2>USER INFORMATION</h2>
+    <p>Name: {{ user.uname }}</p>
+    <p>Email: {{ user.uemail }}</p>
+    <p>Marks: {{ user.umarks }}</p>
+    <p>Room Type: {{ user.room_type }}</p>
+    <p>Amount: {{ user.amount }}</p> <!-- Add Amount -->
+
+    <a href="{% url 'edit_user' user.id %}"><button>Edit Details</button></a>
+    </div>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+
+{% comment %} <!-- user_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h2>USER INFORMATION</h2>
+    <p>Name: {{ user.uname }}</p>
+    <p>Email: {{ user.uemail }}</p>
+    <p>Marks: {{ user.umarks }}</p>
+    <p>Room Type: {{ user.room_type }}</p> <!-- Add Room Type -->
+
+    <a href="{% url 'edit_user' user.id %}"><button>Edit Details</button></a>
+</body>
+</html> {% endcomment %}
+
+
+
+{% comment %} <!-- user_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h2>USER INFORMATION</h2>
+    <p>Name: {{ user.uname }}</p>
+    <p>Email: {{ user.uemail }}</p>
+    <p>Marks: {{ user.umarks }}</p>
+
+    <a href="{% url 'edit_user' user.id %}"><button>Edit Details</button></a>
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} <!-- user_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h2>USER INFORMATION</h2>
+    <p>Name: {{ user.uname }}</p>
+    <p>Email: {{ user.uemail }}</p>
+    <p>Marks: {{ user.umarks }}</p>
+
+    <!-- Add an "Edit Details" button -->
+    <a href="{% url 'edit_user' user.id %}"><button>Edit Details</button></a>
+
+    <!-- Add a form for editing user details -->
+    <h3>Edit Details</h3>
+    <form method="post" action="{% url 'user_detail' user.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
+ {% endcomment %}

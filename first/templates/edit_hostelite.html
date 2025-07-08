@@ -1,0 +1,164 @@
+{% comment %} <!-- edit_user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <h2>Edit User</h2>
+    <form method="post" action="{% url 'edit_user' user.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html> {% endcomment %}
+
+ {% comment %} this below one is the real one  {% endcomment %}
+
+{% comment %} <!-- edit_user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <h2>Edit User</h2>
+    <form method="post" action="{% url 'edit_user' user.id %}">
+        {% csrf_token %}
+        
+        <label for="uname">Name:</label>
+        <input type="text" id="uname" name="uname" value="{{ user.uname }}"><br>
+
+        <label for="uemail">Email:</label>
+        <input type="text" id="uemail" name="uemail" value="{{ user.uemail }}"><br>
+
+        <label for="umarks">Marks:</label>
+        <input type="text" id="umarks" name="umarks" value="{{ user.umarks }}"><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!-- edit_user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <h2>Edit User</h2>
+    <form method="post" action="{% url 'edit_user' user.id %}">
+        {% csrf_token %}
+        
+        <label for="uname">Name:</label>
+        <input type="text" id="uname" name="uname" value="{{ user.uname }}"><br>
+
+        <label for="uemail">Email:</label>
+        <input type="text" id="uemail" name="uemail" value="{{ user.uemail }}"><br>
+
+        <label for="umarks">Marks:</label>
+        <input type="text" id="umarks" name="umarks" value="{{ user.umarks }}"><br>
+
+        <!-- Add Room Type field -->
+        <label for="room_type">Room Type:</label>
+        <select id="room_type" name="room_type">
+            <option value="AC" {% if user.room_type == 'AC' %}selected{% endif %}>AC</option>
+            <option value="NON AC" {% if user.room_type == 'NON AC' %}selected{% endif %}>NON AC</option>
+        </select><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+<!-- edit_hostelite.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>Edit Hostelite</title>
+</head>
+<body>
+    <h2>Edit Hostelite</h2>
+    <form class="form-group" method="post" action="{% url 'edit_hostelite' hostelite.hid %}">
+        {% csrf_token %}
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ hostelite.name }}"><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{ hostelite.email }}"><br>
+
+        <label for="contact_no">Contact Number:</label>
+        <input type="text" id="contact_no" name="contact_no" value="{{ hostelite.contact_no }}"><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" value="{{ hostelite.gender }}"><br>
+
+        <label for="room_no">Room Number:</label>
+        <input type="text" id="room_no" name="room_no" value="{{ hostelite.room_no }}"><br>
+
+        <!-- Add Room Type field -->
+        <label for="room_type">Room Type:</label>
+        <select id="room_type" name="room_type">
+            <option value="AC" {% if hostelite.room_type == 'AC' %}selected{% endif %}>AC</option>
+            <option value="NON AC" {% if hostelite.room_type == 'NON AC' %}selected{% endif %}>NON AC</option>
+        </select><br>
+
+        <label for="date_of_joining">Date of Joining:</label>
+        <input type="date" id="date_of_joining" name="date_of_joining" value="{{ hostelite.date_of_joining }}"><br>
+
+        <label for="course_detail">Course Detail:</label>
+        <input type="text" id="course_detail" name="course_detail" value="{{ hostelite.course_detail }}"><br>
+
+        <label for="father_name">Father's Name:</label>
+        <input type="text" id="father_name" name="father_name" value="{{ hostelite.father_name }}"><br>
+
+        <label for="mother_name">Mother's Name:</label>
+        <input type="text" id="mother_name" name="mother_name" value="{{ hostelite.mother_name }}"><br>
+
+        <label for="father_contact_no">Father's Contact Number:</label>
+        <input type="text" id="father_contact_no" name="father_contact_no" value="{{ hostelite.father_contact_no }}"><br>
+
+        <label for="mother_contact_no">Mother's Contact Number:</label>
+        <input type="text" id="mother_contact_no" name="mother_contact_no" value="{{ hostelite.mother_contact_no }}"><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address">{{ hostelite.address }}</textarea><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

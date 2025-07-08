@@ -1,0 +1,7 @@
+-- CREATE TRIGGER after_hostelite_delete
+-- AFTER DELETE
+-- ON hostelite FOR EACH ROW
+-- BEGIN
+--     INSERT INTO backup (hid, name, email, contact_no, gender, room_no, room_type, date_of_joining, course_detail, father_name, mother_name, father_contact_no, mother_contact_no, address)
+--     VALUES (OLD.hid, OLD.name, OLD.email, OLD.contact_no, OLD.gender, OLD.room_no, OLD.room_type, OLD.date_of_joining, OLD.course_detail, OLD.father_name, OLD.mother_name, OLD.father_contact_no, OLD.mother_contact_no, OLD.address);
+-- END;

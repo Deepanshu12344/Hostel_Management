@@ -1,0 +1,78 @@
+{% comment %} <!-- add_food_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Food Entry</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">Add Food Entry Form</h2>
+        <form name="add_food" method="post" action="{% url 'insertfood' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="breakfast" class="form-label">Breakfast</label>
+                <input type="text" class="form-control" name="breakfast" id="breakfast">
+            </div>
+            <div class="mb-3">
+                <label for="lunch" class="form-label">Lunch</label>
+                <input type="text" class="form-control" name="lunch" id="lunch">
+            </div>
+            <div class="mb-3">
+                <label for="dinner" class="form-label">Dinner</label>
+                <input type="text" class="form-control" name="dinner" id="dinner">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}
+
+
+
+
+<!-- add_food_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Food Entry</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">Add Food Entry Form</h2>
+        <form name="add_food" method="post" action="{% url 'insertfood' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" name="date" id="date">
+            </div>
+            <div class="mb-3">
+                <label for="breakfast" class="form-label">Breakfast</label>
+                <input type="text" class="form-control" name="breakfast" id="breakfast">
+            </div>
+            <div class="mb-3">
+                <label for="lunch" class="form-label">Lunch</label>
+                <input type="text" class="form-control" name="lunch" id="lunch">
+            </div>
+            <div class="mb-3">
+                <label for="dinner" class="form-label">Dinner</label>
+                <input type="text" class="form-control" name="dinner" id="dinner">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

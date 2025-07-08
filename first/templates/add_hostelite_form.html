@@ -1,0 +1,558 @@
+{% comment %} <!doctype html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container my-5">
+        
+        <h2 class="text-center">FORM</h2>
+        <form name="register" method="post" action="{% url 'insertuser' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input type="text" class="form-control" name="uname" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>          
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email Address</label>
+            <input type="Email" class="form-control" name="uemail" id="exampleInputemail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Marks</label>
+                <input type="number" class="form-control" name="umarks" id="exampleInputtext1" aria-describedby="textHelp">
+                </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="my-3">
+            </div>
+            <form name="deletion" method="post" action="../deleteuser/">
+            <div class="mb-3 my-5">
+              <label for="exampleInputEmail1" class="form-label">Enter name for deletion</label>
+              <input type="text" class="form-control" name="uname" id="exampleInputemail1">
+              </div>
+            <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html> {% endcomment %}
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">FORM</h2>
+        <form name="register" method="post" action="{% url 'insertuser' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" name="uname" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>          
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="uemail" id="exampleInputemail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Marks</label>
+                <input type="number" class="form-control" name="umarks" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} ****************************REAL ONE **************************** {% endcomment %}
+
+{% comment %} <!-- form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">FORM</h2>
+        <form name="register" method="post" action="{% url 'insertuser' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Name</label>
+                <input type="text" class="form-control" name="uname" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>          
+            <div class="mb-3">
+                <label for="exampleInputemail1" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="uemail" id="exampleInputemail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Marks</label>
+                <input type="number" class="form-control" name="umarks" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} ****************************REAL ONE **************************** {% endcomment %}
+
+
+{% comment %} <!-- form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">FORM</h2>
+        <form name="register" method="post" action="{% url 'insertuser' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Name</label>
+                <input type="text" class="form-control" name="uname" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>          
+            <div class="mb-3">
+                <label for="exampleInputemail1" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="uemail" id="exampleInputemail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Marks</label>
+                <input type="number" class="form-control" name="umarks" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>
+            <!-- Add Room Type dropdown -->
+            <div class="mb-3">
+                <label for="room_type" class="form-label">Room Type</label>
+                <select class="form-select" name="room_type" id="room_type">
+                    <option value="AC">AC</option>
+                    <option value="NON AC">NON AC</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!-- form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">FORM</h2>
+        <form name="register" method="post" action="{% url 'insertuser' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Name</label>
+                <input type="text" class="form-control" name="uname" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>          
+            <div class="mb-3">
+                <label for="exampleInputemail1" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="uemail" id="exampleInputemail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Marks</label>
+                <input type="number" class="form-control" name="umarks" id="exampleInputtext1" aria-describedby="textHelp">
+            </div>
+            <!-- Add Room Type dropdown -->
+            <div class="mb-3">
+                <label for="room_type" class="form-label">Room Type</label>
+                <select class="form-select" name="room_type" id="room_type">
+                    <option value="AC">AC</option>
+                    <option value="NON AC">NON AC</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Add Deletion Form -->
+        <form name="deletion" method="post" action="{% url 'deleteuser' %}">
+            {% csrf_token %}
+            <div class="mb-3 my-5">
+                <label for="deletion_name" class="form-label">Enter name for deletion</label>
+                <input type="text" class="form-control" name="uname" id="deletion_name">
+            </div>
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!-- add_hostelite_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">Add Hostelite Form</h2>
+        <form name="add_hostelite" method="post" action="{% url 'inserthostelite' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp">
+            </div>          
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="contact_no" class="form-label">Contact No</label>
+                <input type="text" class="form-control" name="contact_no" id="contact_no" aria-describedby="contactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="room_no" class="form-label">Room No</label>
+                <select class="form-select" name="room_no" id="room_no">
+                    <!-- Add dynamic options based on available rooms -->
+                    {% for room in available_rooms %}
+                        <option value="{{ room }}">{{ room }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="room_type" class="form-label">Room Type</label>
+                <select class="form-select" name="room_type" id="room_type">
+                    <option value="AC">AC</option>
+                    <option value="NON AC">NON AC</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="date_of_joining" class="form-label">Date of Joining</label>
+                <input type="date" class="form-control" name="date_of_joining" id="date_of_joining">
+            </div>
+            <div class="mb-3">
+                <label for="course_detail" class="form-label">Course Detail</label>
+                <input type="text" class="form-control" name="course_detail" id="course_detail">
+            </div>
+            <div class="mb-3">
+                <label for="father_name" class="form-label">Father's Name</label>
+                <input type="text" class="form-control" name="father_name" id="father_name">
+            </div>
+            <div class="mb-3">
+                <label for="mother_name" class="form-label">Mother's Name</label>
+                <input type="text" class="form-control" name="mother_name" id="mother_name">
+            </div>
+            <div class="mb-3">
+                <label for="father_contact_no" class="form-label">Father's Contact No</label>
+                <input type="text" class="form-control" name="father_contact_no" id="father_contact_no" aria-describedby="fatherContactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="mother_contact_no" class="form-label">Mother's Contact No</label>
+                <input type="text" class="form-control" name="mother_contact_no" id="mother_contact_no" aria-describedby="motherContactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">Add Hostelite Form</h2>
+        <form name="add_hostelite" method="post" action="{% url 'inserthostelite' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="flefpelf" readonly>
+            </div>     
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="contact_no" class="form-label">Contact No</label>
+                <input type="text" class="form-control" name="contact_no" id="contact_no" aria-describedby="contactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="room_no" class="form-label">Room No</label>
+                <input type="text" class="form-control" name="room_no" id="room_no">
+            </div>
+            <div class="mb-3">
+                <label for="room_type" class="form-label">Room Type</label>
+                <select class="form-select" name="room_type" id="room_type">
+                    <option value="AC">AC</option>
+                    <option value="NON AC">NON AC</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="date_of_joining" class="form-label">Date of Joining</label>
+                <input type="date" class="form-control" name="date_of_joining" id="date_of_joining">
+            </div>
+            <div class="mb-3">
+                <label for="course_detail" class="form-label">Course Detail</label>
+                <input type="text" class="form-control" name="course_detail" id="course_detail">
+            </div>
+            <div class="mb-3">
+                <label for="father_name" class="form-label">Father's Name</label>
+                <input type="text" class="form-control" name="father_name" id="father_name">
+            </div>
+            <div class="mb-3">
+                <label for="mother_name" class="form-label">Mother's Name</label>
+                <input type="text" class="form-control" name="mother_name" id="mother_name">
+            </div>
+            <div class="mb-3">
+                <label for="father_contact_no" class="form-label">Father's Contact No</label>
+                <input type="text" class="form-control" name="father_contact_no" id="father_contact_no" aria-describedby="fatherContactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="mother_contact_no" class="form-label">Mother's Contact No</label>
+                <input type="text" class="form-control" name="mother_contact_no" id="mother_contact_no" aria-describedby="motherContactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+<!-- add_hostelite_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">Add Hostelite Form</h2>
+        <form name="add_hostelite" method="post" action="{% url 'inserthostelite' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp">
+            </div>          
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="contact_no" class="form-label">Contact No</label>
+                <input type="text" class="form-control" name="contact_no" id="contact_no" aria-describedby="contactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="room_no" class="form-label">Room No</label>
+                <input type="text" class="form-control" name="room_no" id="room_no">
+            </div>
+            <div class="mb-3">
+                <label for="room_type" class="form-label">Room Type</label>
+                <select class="form-select" name="room_type" id="room_type">
+                    <option value="AC">AC</option>
+                    <option value="NON AC">NON AC</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="date_of_joining" class="form-label">Date of Joining</label>
+                <input type="date" class="form-control" name="date_of_joining" id="date_of_joining">
+            </div>
+            <div class="mb-3">
+                <label for="course_detail" class="form-label">Course Detail</label>
+                <input type="text" class="form-control" name="course_detail" id="course_detail">
+            </div>
+            <div class="mb-3">
+                <label for="father_name" class="form-label">Father's Name</label>
+                <input type="text" class="form-control" name="father_name" id="father_name">
+            </div>
+            <div class="mb-3">
+                <label for="mother_name" class="form-label">Mother's Name</label>
+                <input type="text" class="form-control" name="mother_name" id="mother_name">
+            </div>
+            <div class="mb-3">
+                <label for="father_contact_no" class="form-label">Father's Contact No</label>
+                <input type="text" class="form-control" name="father_contact_no" id="father_contact_no" aria-describedby="fatherContactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="mother_contact_no" class="form-label">Mother's Contact No</label>
+                <input type="text" class="form-control" name="mother_contact_no" id="mother_contact_no" aria-describedby="motherContactNoHelp">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="{% url 'insertfood' %}" class="btn btn-secondary">Add Food</a>
+            <a href="{% url 'display_hostelite_table' %}" class="btn btn-success">Display Hostelites</a>
+        </form>
+        <form name="deletion" method="post" action="{% url 'deletehostelite' %}">
+            {% csrf_token %}
+            <div class="mb-3 my-5">
+                <label for="deletion_hid" class="form-label">Enter HID for deletion</label>
+                <input type="text" class="form-control" name="hid" id="deletion_hid">
+            </div>
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
